@@ -9,7 +9,7 @@ const initialState = {
   currentQuestion: 0,
   answerSelected: false,
   score: 0,
-  help: false,
+  justification: true,
   optionToHide: null,
 };
 
@@ -38,15 +38,11 @@ const quizReducer = (state, action) => {
         gameStage: STAGES[2],
       };
 
-    case "REORDER_QUESTIONS":
-      const reorderedQuestions = state.questions.sort(() => {
-        return Math.random() - 0.5;
-      });
-
-      return {
-        ...state,
-        questions: reorderedQuestions,
-      };
+    case "NEW_GAME": {
+      console.log(questions);
+      console.log(initialState);
+      return initialState;
+    }
 
     case "CHANGE_QUESTION": {
       const nextQuestion = state.currentQuestion + 1;
@@ -61,14 +57,8 @@ const quizReducer = (state, action) => {
         currentQuestion: nextQuestion,
         gameStage: endGame ? STAGES[3] : state.gameStage,
         answerSelected: false,
-        help: false,
+        justification: false,
       };
-    }
-
-    case "NEW_GAME": {
-      console.log(questions);
-      console.log(initialState);
-      return initialState;
     }
 
     case "CHECK_ANSWER": {
@@ -84,37 +74,14 @@ const quizReducer = (state, action) => {
         ...state,
         score: state.score + correctAnswer,
         answerSelected: option,
+        justification: true,
       };
     }
 
-    case "SHOW_TIP": {
+    case "SHOW_JUSTIFICATION": {
       return {
         ...state,
-        help: "tip",
-      };
-    }
-
-    case "REMOVE_OPTION": {
-      const questionWithoutOption = state.questions[state.currentQuestion];
-
-      console.log(state.currentQuestion);
-
-      console.log(questionWithoutOption);
-
-      let repeat = true;
-      let optionToHide;
-
-      questionWithoutOption.options.forEach((option) => {
-        if (option !== questionWithoutOption.answer && repeat) {
-          optionToHide = option;
-          repeat = false;
-        }
-      });
-
-      return {
-        ...state,
-        optionToHide,
-        help: true,
+        justification: "justification",
       };
     }
 

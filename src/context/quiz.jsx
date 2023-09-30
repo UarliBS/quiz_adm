@@ -9,7 +9,7 @@ const initialState = {
   currentQuestion: 0,
   answerSelected: false,
   score: 0,
-  justification: true,
+  justification: false,
   optionToHide: null,
 };
 

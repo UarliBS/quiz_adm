@@ -17,8 +17,8 @@ const PickCategory = () => {
 
   return (
     <div id="category">
-      <h2>Escolha uma categoria</h2>
-      <p>As perguntas serão referentes a uma das linguagens abaixo:</p>
+      <h2>Escolha um tema</h2>
+      <p>As perguntas serão referentes a uma dos temas abaixo:</p>
       {quizState.questions.map((question) => (
         <button
           onClick={() => chooseCategoryAndReorderQuestions(question.category)}

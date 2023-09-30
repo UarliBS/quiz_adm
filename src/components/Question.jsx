@@ -42,13 +42,19 @@ const Question = () => {
           <button onClick={() => dispatch({ type: "CHANGE_QUESTION" })}>
             Continuar
           </button>
-          <>
-            {currentQuestion.justification && (
-              <button onClick={() => dispatch({ type: "SHOW_JUSTIFICATION" })}>
-                Justificativa
-              </button>
-            )}
-          </>
+
+          {currentQuestion.justification && (
+            <button onClick={() => dispatch({ type: "SHOW_JUSTIFICATION" })}>
+              Mostrar Justificativa
+            </button>
+          )}         
+
+          {quizState.answerSelected && quizState.justification === "justification" && (
+            <div className="justification">
+              <h3>Justificativa:</h3> <br></br>
+              <p>{currentQuestion.justification}</p>
+            </div>
+          )}
         </div>
       )}
     </div>

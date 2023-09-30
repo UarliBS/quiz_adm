@@ -1,12 +1,11 @@
 const data = [
   {
-    category: "HTML",
+    category: "Lançamentos Contábeis",
     questions: [
       {
         question: "A Demonstração do Resultado do Exercício (DRE) é uma das demonstrações financeiras mais cruciais para investidores, analistas e gestores, pois oferece uma visão detalhada do desempenho operacional de uma empresa durante um período específico. Qual das seguintes opções representa corretamente o cálculo do lucro líquido na DRE?",
         options: ["Receitas - Despesas Operacionais - Impostos = Lucro Líquido", "Receitas + Despesas Operacionais + Impostos = Lucro Líquido", "Receitas - Despesas Totais - Impostos = Lucro Líquido", "Receitas + Despesas Totais - Impostos = Lucro Líquido"],
         answer: "Receitas - Despesas Operacionais - Impostos = Lucro Líquido",
-        tip: "É uma tag de uma letra apenas",
         justification: "A Demonstração do Resultado do Exercício (DRE) detalha as receitas, despesas e o lucro líquido da empresa durante um período específico. O cálculo do lucro líquido na DRE envolve a subtração das despesas operacionais e dos impostos das receitas.",
       },
       {
@@ -36,13 +35,13 @@ const data = [
       {
         question: "A Demonstração do Resultado do Exercício (DRE) é uma das principais demonstrações financeiras de uma empresa. Ela fornece informações detalhadas sobre o desempenho financeiro ao longo de um período específico. Qual das seguintes afirmações sobre a DRE está correta?",
         options: ["A DRE mostra o valor total dos ativos da empresa.", "A DRE apresenta informações sobre a variação no caixa disponível da empresa.", "A DRE destaca as atividades de financiamento da empresa.", "A DRE detalha as receitas, despesas e o lucro líquido da empresa durante um período específico."],
-        answer: "A DRE detalha as receitas, despesas e o lucro líquido da empresa durante um período específico",
+        answer: "A DRE detalha as receitas, despesas e o lucro líquido da empresa durante um período específico.",
         justification:"A Demonstração do Resultado do Exercício (DRE) detalha as receitas, despesas e o lucro líquido da empresa durante um período específico, sendo o cálculo do lucro líquido feito subtraindo as despesas operacionais e os impostos das receitas.",
       },
       {
         question: ": A Demonstração do Fluxo de Caixa (DFC) é uma ferramenta vital para entender como uma empresa gera e utiliza seu caixa ao longo do tempo. Qual das seguintes atividades normalmente é classificada como 'Atividade de Investimento' na DFC?",
         options: ["Pagamento de salários aos funcionários.", "Compra de ações de outras empresas.", "Pagamento de juros sobre empréstimos.", "Recebimento de pagamento de clientes."],
-        answer: "Compra de ações de outras empresas",
+        answer: "Compra de ações de outras empresas.",
         justification: "A seção 'Atividades de Investimento' na Demonstração do Fluxo de Caixa (DFC) abrange as transações relacionadas à compra e venda de ativos de longo prazo, como ações de outras empresas, refletindo investimentos de capital.",
       },
       {
@@ -60,7 +59,7 @@ const data = [
       {
         question: "A Demonstração do Fluxo de Caixa (DFC) é dividida em três seções principais: 'Atividades Operacionais', 'Atividades de Investimento', e 'Atividades de Financiamento'. Qual dessas seções reflete principalmente as transações relacionadas à captação e pagamento de recursos financeiros?",
         options: ["Atividades Operacionais.", "Atividades de Investimento.", "Atividades de Financiamento.", "Atividades de Risco."],
-        answer: "Atividades de Financiamento",
+        answer: "Atividades de Financiamento.",
         justification: "A seção 'Atividades de Financiamento' na Demonstração do Fluxo de Caixa (DFC) reflete principalmente as transações relacionadas à captação e pagamento de recursos financeiros, como emissão e recompra de ações e pagamento de dividendos.",
       },
     ],

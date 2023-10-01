@@ -82,6 +82,7 @@ const quizReducer = (state, action) => {
       return {
         ...state,
         justification: "justification",
+
       };
     }
 

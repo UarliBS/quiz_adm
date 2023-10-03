@@ -1,9 +1,6 @@
-import { useContext, useState } from "react";
-
+import React, { useContext } from "react";
 import { QuizContext } from "../context/quiz";
-
 import Option from "./Option";
-
 import "./Question.css";
 
 const Question = () => {
@@ -16,8 +13,6 @@ const Question = () => {
       payload: { answer: currentQuestion.answer, option },
     });
   };
-
-  console.log(quizState.optionToHide);
 
   return (
     <div id="question">
@@ -32,7 +27,6 @@ const Question = () => {
             key={option}
             answer={currentQuestion.answer}
             selectOption={() => onSelectOption(option)}
-            hide={quizState.optionToHide === option ? "hide" : null}
           />
         ))}
       </div>
@@ -47,11 +41,12 @@ const Question = () => {
             <button onClick={() => dispatch({ type: "SHOW_JUSTIFICATION" })}>
               Mostrar Justificativa
             </button>
-          )}         
+          )}
 
           {quizState.answerSelected && quizState.justification === "justification" && (
             <div className="justification">
-              <h3>Justificativa:</h3> <br></br>
+              <h3>Justificativa:</h3>
+              <br />
               <p>{currentQuestion.justification}</p>
             </div>
           )}

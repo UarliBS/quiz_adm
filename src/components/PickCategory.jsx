@@ -24,8 +24,10 @@ const PickCategory = () => {
     } else {
       console.log("Nome do usuário:", userName);
       setShowCategoryButton(true);
+      dispatch({ type: "SET_USER_NAME", payload: userName }); // Atualiza o userName no contexto global
     }
   }
+  
 
   return (
     <div id="category">

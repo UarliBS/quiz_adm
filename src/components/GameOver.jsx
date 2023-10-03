@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { QuizContext } from "../context/quiz";
 import WellDone from "../img/welldone.svg";
 import "./GameOver.css";
@@ -25,12 +25,14 @@ const GameOver = ({ userName }) => {
             </tr>
           </thead>
           <tbody>
-            <tr className="table-body">
-              <td>{userName}</td>
-              <td>{quizState.questions.length}</td>
-              <td>{quizState.acertos}</td>
-              <td>{quizState.score}</td>
-            </tr>
+            {quizState.players.map((player, index) => (
+              <tr className="table-body" key={index}>
+                <td>{player.userName}</td>
+                <td>{quizState.questions.length}</td>
+                <td>{player.acertos}</td>
+                <td>{player.score}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

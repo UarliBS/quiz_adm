@@ -12,7 +12,14 @@ const initialState = {
   score: 0,
   justification: false,
   optionToHide: null,
+  userName: "",
+  userRecords: [],
+  players: [], // Array para manter registros de jogadores
 };
+
+
+
+
 
 console.log(initialState);
 
@@ -40,9 +47,10 @@ const quizReducer = (state, action) => {
       };
 
     case "NEW_GAME": {
-      console.log(questions);
-      console.log(initialState);
-      return initialState;
+      return {
+        ...initialState,
+        userRecords: state.userRecords, // Mantenha a lista de registros de usuários
+      };
     }
 
     case "CHANGE_QUESTION": {
@@ -64,27 +72,42 @@ const quizReducer = (state, action) => {
 
     case "CHECK_ANSWER": {
       if (state.answerSelected) return state;
-
+    
       const answer = action.payload.answer;
       const option = action.payload.option;
       let correctAnswer = 0;
-
+    
       if (answer === option) correctAnswer = 1;
-
+    
       return {
         ...state,
-        score: state.score + correctAnswer * 5,
-        acertos: state.acertos + correctAnswer,
+        score: state.score + correctAnswer * 5, // Atualiza o score
+        acertos: state.acertos + correctAnswer, // Atualiza os acertos
         answerSelected: option,
         justification: true,
       };
     }
+    
 
     case "SHOW_JUSTIFICATION": {
       return {
         ...state,
         justification: "justification",
+      };
+    }
 
+    case "SET_USER_NAME": {
+      const newUserRecord = {
+        userName: action.payload,
+        acertos: state.acertos, // Mantenha a quantidade de acertos do usuário atual
+        score: state.score, // Mantenha a pontuação do usuário atual
+      };
+    
+      return {
+        ...state,
+        userName: action.payload,
+        userRecords: [...state.userRecords, newUserRecord],
+        players: [...state.players, newUserRecord], // Adicione o novo jogador ao array de jogadores
       };
     }
 

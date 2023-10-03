@@ -8,6 +8,7 @@ const initialState = {
   questions,
   currentQuestion: 0,
   answerSelected: false,
+  acertos: 0,
   score: 0,
   justification: false,
   optionToHide: null,
@@ -72,7 +73,8 @@ const quizReducer = (state, action) => {
 
       return {
         ...state,
-        score: state.score + correctAnswer,
+        score: state.score + correctAnswer * 5,
+        acertos: state.acertos + correctAnswer,
         answerSelected: option,
         justification: true,
       };

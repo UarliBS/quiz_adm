@@ -44,7 +44,7 @@ const PickCategory = () => {
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
             />
-            <button onClick={storeUserName}>Armazenar Nome</button> {/* Botão para armazenar o nome do usuário */}
+            <button onClick={storeUserName}>Continuar</button> {/* Botão para armazenar o nome do usuário */}
             {showCategoryButton ? (
               quizState.questions.map((question) => (
                 <button
@@ -55,7 +55,7 @@ const PickCategory = () => {
                 </button>
               ))
             ) : (
-              <p>Favor inserir seu nome para continuar.</p>
+              <p>Favor inserir seu nome.</p>
             )}
           </div>
 

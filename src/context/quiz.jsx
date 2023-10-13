@@ -91,7 +91,6 @@ const quizReducer = (state, action) => {
       };
     }
 
-
     case "SHOW_JUSTIFICATION": {
       return {
         ...state,

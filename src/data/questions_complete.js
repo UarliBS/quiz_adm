@@ -1,6 +1,6 @@
 const data = [
   {
-    category: "Lançamentos Contábeis",
+    category: "Continuar",
     questions: [
       {
         question: "A Demonstração do Resultado do Exercício (DRE) é uma das demonstrações financeiras mais cruciais para investidores, analistas e gestores, pois oferece uma visão detalhada do desempenho operacional de uma empresa durante um período específico. Qual das seguintes opções representa corretamente o cálculo do lucro líquido na DRE?",

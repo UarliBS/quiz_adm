@@ -17,10 +17,6 @@ const initialState = {
   players: [], // Array para manter registros de jogadores
 };
 
-
-
-
-
 console.log(initialState);
 
 const quizReducer = (state, action) => {
@@ -61,24 +57,31 @@ const quizReducer = (state, action) => {
         endGame = true;
       }
 
+      // Atualize os acertos e a pontuação do jogador
+      const correctAnswer = state.answerSelected === state.questions[state.currentQuestion].answer ? 1 : 0;
+      const newAcertos = state.acertos + correctAnswer;
+      const newScore = state.score + correctAnswer * 5;
+
       return {
         ...state,
         currentQuestion: nextQuestion,
         gameStage: endGame ? STAGES[3] : state.gameStage,
         answerSelected: false,
         justification: false,
+        acertos: newAcertos,
+        score: newScore,
       };
     }
 
     case "CHECK_ANSWER": {
       if (state.answerSelected) return state;
-    
+
       const answer = action.payload.answer;
       const option = action.payload.option;
       let correctAnswer = 0;
-    
+
       if (answer === option) correctAnswer = 1;
-    
+
       return {
         ...state,
         score: state.score + correctAnswer * 5, // Atualiza o score
@@ -87,7 +90,7 @@ const quizReducer = (state, action) => {
         justification: true,
       };
     }
-    
+
 
     case "SHOW_JUSTIFICATION": {
       return {
@@ -102,12 +105,15 @@ const quizReducer = (state, action) => {
         acertos: state.acertos, // Mantenha a quantidade de acertos do usuário atual
         score: state.score, // Mantenha a pontuação do usuário atual
       };
-    
+
+      const updatedUserRecords = [...state.userRecords, newUserRecord];
+      localStorage.setItem("userRecords", JSON.stringify(updatedUserRecords));
+
       return {
         ...state,
         userName: action.payload,
         userRecords: [...state.userRecords, newUserRecord],
-        players: [...state.players, newUserRecord], // Adicione o novo jogador ao array de jogadores
+        players: updatedUserRecords,
       };
     }
 

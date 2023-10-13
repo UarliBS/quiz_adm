@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect} from "react";
 import { QuizContext } from "../context/quiz";
 import Option from "./Option";
 import "./Question.css";
@@ -39,13 +39,12 @@ const Question = () => {
 
           {currentQuestion.justification && (
             <button onClick={() => dispatch({ type: "SHOW_JUSTIFICATION" })}>
-              Mostrar Justificativa
+              Justificativa:
             </button>
           )}
 
           {quizState.answerSelected && quizState.justification === "justification" && (
             <div className="justification">
-              <h3>Justificativa:</h3>
               <br />
               <p>{currentQuestion.justification}</p>
             </div>

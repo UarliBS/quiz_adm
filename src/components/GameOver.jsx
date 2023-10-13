@@ -1,10 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { QuizContext } from "../context/quiz";
 import WellDone from "../img/welldone.svg";
 import "./GameOver.css";
 
-const GameOver = ({ userName }) => {
+const GameOver = () => {
   const [quizState, dispatch] = useContext(QuizContext);
+  const [userRecords, setUserRecords] = useState([]);
+
+  useEffect(() => {
+    const storedUserRecords = localStorage.getItem("userRecords");
+    if (storedUserRecords) {
+      setUserRecords(JSON.parse(storedUserRecords));
+    }
+  }, []);
 
   return (
     <div id="gameover">
@@ -18,14 +26,14 @@ const GameOver = ({ userName }) => {
         <table>
           <thead className="table-header">
             <tr className="table-row">
-              <td>Name</td>
-              <td>Quantidade de questões</td>
+              <td>Nome</td>
+              <td>Qtd de Perguntas</td>
               <td>Acertos</td>
               <td>Pontos</td>
             </tr>
           </thead>
           <tbody>
-            {quizState.players.map((player, index) => (
+            {userRecords.map((player, index) => (
               <tr className="table-body" key={index}>
                 <td>{player.userName}</td>
                 <td>{quizState.questions.length}</td>

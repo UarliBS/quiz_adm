@@ -1,6 +1,5 @@
 #welcome {
   text-align: center;
-  max-width: 500px;
 }
 
 #welcome h2,
@@ -9,9 +8,10 @@
 }
 
 #welcome p {
-  color: #F58634;
+  color: #f58634;
 }
 
 #welcome img {
-  margin-top: 2rem;
+  margin-bottom: 1rem;
+  max-width: 300px; 
 }

@@ -37,3 +37,69 @@ button:hover {
     rgba(239, 48, 55, 1) 100%
   );
 }
+
+/* Estilos para telas menores, como tablets */
+@media (max-width: 768px) {
+  .App {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* Estilos para telas ainda menores, como smartphones */
+@media (max-width: 480px) {
+  .App {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
+
+/* Estilos para telas menores, como tablets */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
+
+/* Estilos para telas ainda menores, como smartphones */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
+
+/* Estilos para telas menores, como tablets */
+@media (max-width: 768px) {
+  #question {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    width: 275px;
+  }
+}
+
+/* Estilos para telas ainda menores, como smartphones */
+@media (max-width: 480px) {
+  #question {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.9rem;
+    width: 275px;
+  }
+}
+
+/* Estilos para telas menores, como tablets */
+@media (max-width: 768px) {
+  button {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* Estilos para telas ainda menores, como smartphones */
+@media (max-width: 480px) {
+  button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.9rem;
+  }
+}

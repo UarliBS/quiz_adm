@@ -18,10 +18,7 @@ const GameOver = () => {
   return (
     <div id="gameover">
       <h2>Fim de jogo!!</h2>
-      <p>Pontuação: {quizState.score}</p>
-      <p>
-        Você acertou {quizState.acertos} de {quizState.questions.length} perguntas.
-      </p>
+      
       <div>
         <table>
           <thead className="table-header">

@@ -1,24 +1,24 @@
-#category {
+#theme {
   text-align: center;
   max-width: 500px;
 }
 
-#category h2,
-#category p {
+#theme h2,
+#theme p {
   margin-bottom: 1rem;
 }
 
-#category p {
+#theme p {
   font-size: 25px;
   color: #F58634;
 }
 
-#category img {
+#theme img {
   margin-top: 2rem;
   max-width: 300px;
 }
 
-#category button {
+#theme button {
   margin: 1rem;
 
 }

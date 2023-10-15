@@ -56,21 +56,19 @@ button:hover {
 
 /* Estilos para telas menores, como tablets */
 @media (max-width: 768px) {
-  h2 {
+  h2, p {
     font-size: 0.9rem;
     padding: 0.4rem 0.9rem;
   }
 }
 
-/* Estilos para telas ainda menores, como smartphones */
 @media (max-width: 480px) {
-  h2 {
+  h2, p {
     font-size: 0.9rem;
     padding: 0.4rem 0.9rem;
   }
 }
 
-/* Estilos para telas menores, como tablets */
 @media (max-width: 768px) {
   #question {
     font-size: 1rem;
@@ -79,7 +77,6 @@ button:hover {
   }
 }
 
-/* Estilos para telas ainda menores, como smartphones */
 @media (max-width: 480px) {
   #question {
     font-size: 0.9rem;
@@ -88,7 +85,6 @@ button:hover {
   }
 }
 
-/* Estilos para telas menores, como tablets */
 @media (max-width: 768px) {
   button {
     font-size: 1rem;
@@ -96,10 +92,21 @@ button:hover {
   }
 }
 
-/* Estilos para telas ainda menores, como smartphones */
 @media (max-width: 480px) {
   button {
     font-size: 0.9rem;
     padding: 0.4rem 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #welcome img {
+    width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  #welcome img, #category img {
+    width: 250px;
   }
 }

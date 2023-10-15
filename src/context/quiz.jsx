@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
 import questions from "../data/questions_complete";
 
-const STAGES = ["Start", "Category", "Playing", "End"];
+const STAGES = ["Start", "Theme", "Playing", "End"];
 
 const initialState = {
   gameStage: STAGES[0],
@@ -11,7 +11,6 @@ const initialState = {
   acertos: 0,
   score: 0,
   justification: false,
-  optionToHide: null,
   userName: "",
   userRecords: [],
   players: [], // Array para manter registros de jogadores
@@ -31,7 +30,7 @@ const quizReducer = (state, action) => {
       let quizQuestions = null;
 
       state.questions.forEach((question) => {
-        if (question.category === action.payload) {
+        if (question.theme === action.payload) {
           quizQuestions = question.questions;
         }
       });
@@ -57,19 +56,12 @@ const quizReducer = (state, action) => {
         endGame = true;
       }
 
-      // Atualize os acertos e a pontuação do jogador
-      const correctAnswer = state.answerSelected === state.questions[state.currentQuestion].answer ? 1 : 0;
-      const newAcertos = state.acertos + correctAnswer;
-      const newScore = state.score + correctAnswer * 5;
-
       return {
         ...state,
         currentQuestion: nextQuestion,
         gameStage: endGame ? STAGES[3] : state.gameStage,
         answerSelected: false,
         justification: false,
-        acertos: newAcertos,
-        score: newScore,
       };
     }
 
@@ -91,31 +83,13 @@ const quizReducer = (state, action) => {
       };
     }
 
-    case "SHOW_JUSTIFICATION": {
-      return {
-        ...state,
-        justification: "justification",
-      };
-    }
-
     case "SET_USER_NAME": {
-      const newUserRecord = {
-        userName: action.payload,
-        acertos: state.acertos, // Mantenha a quantidade de acertos do usuário atual
-        score: state.score, // Mantenha a pontuação do usuário atual
-      };
-
-      const updatedUserRecords = [...state.userRecords, newUserRecord];
-      localStorage.setItem("userRecords", JSON.stringify(updatedUserRecords));
-
       return {
         ...state,
         userName: action.payload,
-        userRecords: [...state.userRecords, newUserRecord],
-        players: updatedUserRecords,
       };
     }
-
+    
     default:
       return state;
   }

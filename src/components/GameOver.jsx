@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { QuizContext } from "../context/quiz";
-import WellDone from "../img/welldone.svg";
+import WellDone from "../img/welldone.png";
 import "./GameOver.css";
 
 const GameOver = () => {
